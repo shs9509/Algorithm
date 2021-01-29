@@ -1,3 +1,5 @@
+# 문제 https://www.acmicpc.net/problem/1247
+
 answer = list()     # 답을 넣을 리스트
 num=list()      # 연산할 숫자를 넣는 리스트
 

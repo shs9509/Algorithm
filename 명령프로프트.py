@@ -1,3 +1,4 @@
+# 문제 https://www.acmicpc.net/problem/1032
 
 def prompt(file_names):
     short_name_index = 0
