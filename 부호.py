@@ -16,4 +16,6 @@ for i in range(3):      # 케이스가 3개이므로 3번 돌린다.
     num.clear()     # 한번 연산을 끝내고 다음 리스트의 연산을 위해 clear한다.             
 
 for i in range(3):
-    print(answer[i])        #지금까지 연산한 값을 출력   
+    print(answer[i])        #지금까지 연산한 값을 출력 
+
+  
