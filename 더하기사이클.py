@@ -1,24 +1,21 @@
 #문제 https://www.acmicpc.net/problem/1110
 
-number = input()
-next_number= int(number)
-count =0
+number = input()    
+first_number= int(number)   #초기값
+count =0    #반복횟수
 number= int(number)
-while True:
+while True: #break를 만날때까지 반복
 
     if(number)>=10:
-        (a,b) = divmod(number,10)
+        (a,b) = divmod(number,10)   #a는 몫 ,b는 나머지
         number = 10*b + ((a+b)%10)
-        count += 1
     else:
-        number=number*10+number
-        count += 1
+        number=number*10+number #한자리경우 10으로 나눌 필요가없다.
+    count += 1  #반복횟수 증가
 
-    if next_number == number:
+    if first_number == number:  #초기값과 같다면 반복을 빠져나온다.
         break
     
 print(count)
 
-# divmod를 알아야 더 간단하다. 
-# recursive를 생각했었지만 whlie문이 훨씬 쉬었다.
 
