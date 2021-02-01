@@ -1,15 +1,16 @@
 #문제 https://www.acmicpc.net/problem/1110
 
+
 number = input()    
-first_number= int(number)   #초기값
+first_number= int(number)   #초기값 
 count =0    #반복횟수
 number= int(number)
 while True: #break를 만날때까지 반복
 
-    if(number)>=10:
-        (a,b) = divmod(number,10)   #a는 몫 ,b는 나머지
-        number = 10*b + ((a+b)%10)
-    else:
+    if(number)>=10:  #2자리 
+        (a,b) = divmod(number,10)   #a는 몫 ,b는 나머지  
+        number = 10*b + ((a+b)%10) 
+    else:#한자리
         number=number*10+number #한자리경우 10으로 나눌 필요가없다.
     count += 1  #반복횟수 증가
 
