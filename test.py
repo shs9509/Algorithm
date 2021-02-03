@@ -22,3 +22,8 @@
 #     print('참인가')
 # else: 
 #     print('거짓인가.')n, m = map(int, input().split())
+
+while True:
+     answer = input('0을 입력하지 않으면 끝나지 않습니다.')
+     if answer == '0':
+          break
