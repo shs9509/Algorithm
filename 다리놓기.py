@@ -17,18 +17,18 @@ for i in range(n):
     print(river_bridge(int(c[0]),int(c[1])))
 
 
-# def factorial(n):
-#     num = 1
-#     for i in range(1, n+1):
-#         num *= i
-#     return num
+def factorial(n):
+    num = 1
+    for i in range(1, n+1):
+        num *= i
+    return num  #조합을 구현하기 위한 팩토리얼 함수 구현 
 
 
-# T = int(input())
+T = int(input())
 
-# for _ in range(T):
-#     n, m = map(int, input().split())
-#     bridge = factorial(m) // (factorial(n) * factorial(m - n))
-#     print(bridge)
+for _ in range(T):
+    n, m = map(int, input().split())
+    bridge = factorial(m) // (factorial(n) * factorial(m - n)) #mCn
+    print(bridge)
 
 # mCn (m-n)!n!
