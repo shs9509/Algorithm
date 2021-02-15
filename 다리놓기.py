@@ -1,12 +1,13 @@
 import sys
 
-def river_bridge(a,b):
+def river_bridge(a,b): # (3,6) 시작
     count=0
     if a==1:
-        count += b
+        count += b  
+        #(1,4) 나 (1,3) 의 경우 4가지 3가지의 경우를 가지므로 b가 경우의수값
     else:
         for i in range(1,b-a+2):
-            count +=river_bridge(a-1,b-i)
+            count +=river_bridge(a-1,b-i) # (2,5) (2,4) (2,3) (2,2) 호출
     return count
 
 n= int(sys.stdin.readline())
