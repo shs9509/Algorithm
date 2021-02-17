@@ -54,14 +54,14 @@ col = ['A','B','C','D','E','F','G','H']
 
 for i in range(len(col)):
     if king[0] == col[i]:
-        king_ps.append(i+1)
+        king_ps.append(i+1)  # A1  11
         king_ps.append(int(king[1]))
     if stone[0] == col[i]:
         stone_ps.append(i+1)
         stone_ps.append(int(stone[1]))
 while times !=0:
     moving = input()
-    mov(king_ps,moving)
+    mov(king_ps,moving) # a1
     
     if king_ps == stone_ps:
         mov(stone_ps,moving)
