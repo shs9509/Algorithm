@@ -8,4 +8,4 @@ while a!=0:
     else:
         a = a//2
         count += 1
-print(count)
+print(count)        # 이거 그냉 2진수 문제
