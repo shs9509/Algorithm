@@ -1,3 +1,4 @@
+#https://www.acmicpc.net/problem/1063
 def mov(li,mov):    # 움직임에 따른 함수
     
     if mov =='R':
