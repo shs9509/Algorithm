@@ -13,3 +13,5 @@ for j in range(len(step_height)-1):
     step_gaps.append(step_gap)
         
 print(max(step_gaps))
+
+# 끝에 [0]을 넣어줌으로서 간단해짐 -> 마지막 부분이 오르막길이면 append 되지 않음 상태를 막을수잇다.
