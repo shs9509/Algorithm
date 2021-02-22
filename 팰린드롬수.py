@@ -1,3 +1,4 @@
+#https://www.acmicpc.net/problem/1259
 import sys
 while True:
     a=sys.stdin.readline()

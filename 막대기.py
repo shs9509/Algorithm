@@ -1,3 +1,4 @@
+#https://www.acmicpc.net/problem/1094
 a = input()
 a = int(a)
 

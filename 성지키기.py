@@ -1,4 +1,4 @@
-
+#https://www.acmicpc.net/problem/1236
 a = input().split()     # 행, 열을 받아서 split 로 나눈다.  ### '4  4' ->['4','4']
 
 row=int(a[0])   # 행    ### 4

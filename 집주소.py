@@ -1,3 +1,4 @@
+#https://www.acmicpc.net/problem/1284
 dict_num = {'1':2 ,'2':3,'0':4,'3':3,'4':3,'5':3,'6':3,'7':3,'8':3,'9':3}
 answer = list()
 

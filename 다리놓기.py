@@ -1,3 +1,4 @@
+#https://www.acmicpc.net/problem/1010
 import sys
 
 def river_bridge(a,b): # (3,6) 시작

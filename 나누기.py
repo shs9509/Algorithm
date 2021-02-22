@@ -1,3 +1,4 @@
+#https://www.acmicpc.net/problem/1075
 import sys
 a = int(sys.stdin.readline())
 b = int(sys.stdin.readline())

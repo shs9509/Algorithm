@@ -1,3 +1,4 @@
+#https://www.acmicpc.net/problem/8979
 a,b = list(map(int, input().split()))
 c = list()
 for i in range(a):

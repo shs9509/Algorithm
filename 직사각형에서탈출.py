@@ -1,3 +1,4 @@
+#https://www.acmicpc.net/problem/1085
 position = input()
 position=position.split(' ')
 x=int(position[0])

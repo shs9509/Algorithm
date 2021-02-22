@@ -1,3 +1,4 @@
+#https://www.acmicpc.net/problem/1064
 a= list(map(int,input().split()))
 
 b= complex(a[0],a[1])   # b c d 의 점의 좌표를 complex로 표현

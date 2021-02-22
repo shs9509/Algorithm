@@ -1,3 +1,4 @@
+#https://www.acmicpc.net/problem/1316
 import sys
 a= input()
 count =0

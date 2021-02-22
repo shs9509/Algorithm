@@ -1,3 +1,4 @@
+#https://www.acmicpc.net/problem/1145
 arr = list(map(int, input().split()))
 def gcd(a,b): #최대 공약수
 	if a<b: #a에 더 큰수가 위치해야함

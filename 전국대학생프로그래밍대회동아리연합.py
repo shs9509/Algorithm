@@ -1,3 +1,4 @@
+#https://www.acmicpc.net/problem/5046
 a=input()
 a=a.split()
 number=int(a[0])    # 참가자수

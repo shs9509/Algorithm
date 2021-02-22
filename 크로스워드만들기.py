@@ -1,3 +1,4 @@
+#https://www.acmicpc.net/problem/2804
 a,b = list(input().split())
 a = list(a)
 b = list(b)
