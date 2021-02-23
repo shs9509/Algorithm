@@ -3,8 +3,8 @@
 def min_idx(li):
     min_val = 1000
     min_id = 0
-    for i in range(len(li)):
-        if min_val>=li[i]:
+    for i in range(len(li)-1,-1,-1):
+        if min_val>=li[i]:      # '=' 이거때문에 인덱스에러 문젠줄 알았는데 아니네?
             min_id= i
             min_val =li[i]
     return min_id           #최소값 인덱스구하기
@@ -13,7 +13,32 @@ def min_idx(li):
 frame_num = int(input()) #액자개수 3
 reco_time = int(input()) #추천횟수  9
 stu_li = list(map(int,input().split()))  #학생의 추천리스트 [2,1,4,3,5,6,2,7,2]
+frame = list() 
+count_num = [0]*frame_num   #기존 액자의 추천수 [0,0,0]
 
+for i in range(reco_time):
+    if len(frame) < frame_num and stu_li[i] not in frame:   # 1. 액자가 꽉차지않고 없는 추천이 들어올 경우
+        frame.append(stu_li[i])         # 액자에 추천번호 추가 
+        pos = frame.index(stu_li[i])    # 추천번호의 위치
+        count_num[pos] += 1             # 그 위치의 추천수 +1
+    
+    elif stu_li[i] in frame:    # 2. 기존 액자에 있는 추천번호가 들어올 경우
+        pos = frame.index(stu_li[i])
+        count_num[pos] += 1     # 추천수 +1
+    
+    else:                       # 3. 새로운 추천이 들어올 경우
+        frame.pop(min_idx(count_num))   # 추천수가 가장 작은 자리의 액자를 뽑아냄
+        count_num.pop(min_idx(count_num))   # 추천수도 뽑아내기
+        frame.append(stu_li[i])     # 새로 넣기
+        count_num.append(1)
+    # print(frame , count_num)
+
+for j in sorted(frame):
+    print(j, end=' ')
+
+    
+
+        # print(count_num,'count_num')
 # frame = list()
 # count_num = list()
 # for i in range(reco_time):
