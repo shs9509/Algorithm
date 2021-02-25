@@ -17,7 +17,7 @@ for k in range(5):
                 if bingo_pan[x][y] == m:
                     bingo_pan[x][y] = 0
         
-        for x in range(5):
+        for x in range(5):          # 가로
             for y in range(5):
                 if bingo_pan[x][y] == 0:
                     continue
@@ -25,7 +25,8 @@ for k in range(5):
                     break
             else:
                 count += 1
-        for x in range(5):
+
+        for x in range(5):      # 세로
             for y in range(5):
                 if bingo_pan[y][x] == 0:
                     continue
@@ -33,7 +34,8 @@ for k in range(5):
                     break
             else:
                 count += 1
-        for x in range(5):
+
+        for x in range(5):     # 대각
             if bingo_pan[x][x] == 0:
                 continue
             else:
@@ -41,7 +43,7 @@ for k in range(5):
         else:
             count += 1
 
-        for x in range(5):
+        for x in range(5):      # 역대각
             if bingo_pan[x][4-x] == 0:
                 continue
             else:

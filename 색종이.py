@@ -1,5 +1,4 @@
 #https://www.acmicpc.net/problem/10163
-
 a = int(input())
 b =[list(map(int, input().split())) for i in range(a)]
 c =[[0]*101 for _ in range(101)]    # 101x101 의 0으로 꽉찬 색종이
@@ -17,6 +16,7 @@ for i in range(len(b)):
 
 for i in answer:
     print(i)
+
 
 '''
  출력되는데 겁나오래걸림

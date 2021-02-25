@@ -1,5 +1,4 @@
 #https://www.acmicpc.net/problem/1244
-
 switch_num = int(input())   #8개
 switch = list(map(int, input().split())) #[0,1,0,1,0,0,0,1]
 stu_num = int(input())  # 2명
@@ -38,6 +37,7 @@ while j<len(switch):
     j += 1
     if not j %20:
         print('')
+
 
 '''    
  막 어렵지는 않았는데 1부터 시작해서 헷갈렸다.

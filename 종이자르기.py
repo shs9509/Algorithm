@@ -17,15 +17,15 @@ for i in pos:
         row.append(i[1]) #row = [0,8,3,2]
 col = sorted(col)
 row = sorted(row)
-print(col,row)
+# print(col,row)
 col_chai=list() # col마다의 너비    [4,6]
 row_chai=list() # row마다의 너비    [2,1,5]
 for i in range(len(col)-1,0,-1):
     col_chai.append(col[i]-col[i-1])
 for i in range(len(row)-1,0,-1):
     row_chai.append(row[i]-row[i-1])
-print(col_chai,row_chai)
-print(max(col_chai)*max(row_chai))
+# print(col_chai,row_chai)
+print(max(col_chai)*max(row_chai))  #큰거끼리 곱하기 6*5
 
 
 
