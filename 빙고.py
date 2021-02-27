@@ -1,3 +1,4 @@
+#https://www.acmicpc.net/problem/2578
 bingo_pan = list()
 for i in range(5):
     bingo_pan.append(list(map(int,input().split())))
