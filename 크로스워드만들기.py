@@ -6,8 +6,8 @@ a_id = 0
 b_id = 0
 flag =True
 for a_idx in range(len(a)): # 가로 
-    for b_idx in range(len(b)-1,-1,-1):  #for b_idx in range(len(b)): 이렇게 하면 끝이 된다 ㅇㅅㅇ?
-        if (flag == True) and (a[a_idx] == b[b_idx]):
+    for b_idx in range(len(b)): #세로
+        if (flag == True) and (a[a_idx] == b[b_idx]):	#같은 원소를 만나자마자 break
             a_id = a_idx
             b_id = b_idx
             flag =False

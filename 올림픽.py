@@ -5,27 +5,27 @@ for i in range(a):
     c.append(list(map(int, input().split())))
 
 for k in range(len(c)):
-    c[k].append(int(k)+1)
+    c[k].append(int(k)+1)	# 등수표현
 
-for n in range(len(c)-1):
+for n in range(len(c)-1):	
     for j in range(len(c)-n-1):
-        if c[j][1] < c[j+1][1]:
+        if c[j][1] < c[j+1][1]:	# 금메달 비교
             c[j][4] ,c[j+1][4] = c[j+1][4], c[j][4]  
             c[j], c[j+1] = c[j+1], c[j]
 
 for n in range(len(c)-1):
     for p in range(len(c)-n-1):
-        if c[p][1] == c[p+1][1] and c[p][2] < c[p+1][2]:
+        if c[p][1] == c[p+1][1] and c[p][2] < c[p+1][2]:	# 은메달 비교
             c[p][4] ,c[p+1][4] = c[p+1][4], c[p][4]
             c[p], c[p+1] = c[p+1], c[p]
 
 for n in range(len(c)-1):
-    for y in range(len(c)-n-1):        
-        if c[y][1] == c[y+1][1] and c[y][2] == c[y+1][2] and c[y][3] < c[y+1][3]:
+    for y in range(len(c)-n-1):   # 동메달 비교     
+        if c[y][1] == c[y+1][1] and c[y][2] == c[y+1][2] and c[y][3] < c[y+1][3]: 
             c[y][4] ,c[y+1][4] = c[y+1][4], c[y][4]
             c[y], c[y+1] = c[y+1], c[y]
     
-for z in range(len(c)-1):
+for z in range(len(c)-1):	#값이 같은경우 등수를 높은걸로 통일시켜준다.
     if c[z][1] == c[z+1][1] and c[z][2] == c[z+1][2] and c[z][3] == c[z+1][3]:
         c[z+1][4] = c[z][4]
 

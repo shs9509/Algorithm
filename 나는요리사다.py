@@ -10,8 +10,11 @@ for j in score:
 max_val=score_sum[0]
 
 for k in range(5):
-    if score_sum[k]>= max_val:  # if score_sum[k]>= max_val: '=' 이거 안하면 틀림 왜? 해결!
-        max_val = score_sum[k]
+    if score_sum[k]>= max_val:  # if score_sum[k]>= max_val: '=' 이거 안하면 틀림 왜? 
+        max_val = score_sum[k]	# 최대값이안변하면 그거는 그거대로 오류
         max_id = k+1
 
 print('{} {}'.format(max_id,max_val))
+
+
+# if score_sum[k]>= max_val: '=' 이거 안하면 틀림 왜? 해결!

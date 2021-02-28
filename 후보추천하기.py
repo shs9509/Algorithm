@@ -1,10 +1,9 @@
 #https://www.acmicpc.net/problem/1713
-
 def min_idx(li):
     min_val = 1000
     min_id = 0
     for i in range(len(li)-1,-1,-1):
-        if min_val>=li[i]:      # '=' 이거때문에 인덱스에러 문젠줄 알았는데 아니네?
+        if min_val>=li[i]: 
             min_id= i
             min_val =li[i]
     return min_id           #최소값 인덱스구하기
@@ -36,7 +35,7 @@ for i in range(reco_time):
 for j in sorted(frame):
     print(j, end=' ')
 
-    
+
 
         # print(count_num,'count_num')
 # frame = list()
