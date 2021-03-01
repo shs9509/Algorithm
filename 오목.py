@@ -1,3 +1,4 @@
+#https://www.acmicpc.net/problem/2615
 O_mok = list()
 for i in range(19):
     O_mok.append(list(map(int,input().split())))
