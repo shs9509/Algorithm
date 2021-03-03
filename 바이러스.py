@@ -10,8 +10,8 @@ for i in range(link):
     G[u].append(v)  # G에 연결된 장소 저장
     G[v].append(u)
 
-# print(G)
-# print(visited)
+print(G)
+print(visited)
 visited[1] = True
 S = list()
 S.append(1)
@@ -26,6 +26,6 @@ while S:
 for i in visited:
     if i:
         count += 1
-# print(visited)
+print(visited)
 print(count-1)
 
