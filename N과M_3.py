@@ -12,7 +12,7 @@ def perm(k,n):
         print(' '.join(order))
         return
     for i in range(len(P)):
-        # if used[i]: continue
+        # if used[i]: continue  # 중복을 걸러주는 범인
         used[i] = True
         order.append(P[i])
 

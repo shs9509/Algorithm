@@ -7,8 +7,7 @@ for i in range(scale):
     zido.append(list(map(int,input())))
 # print(zido)
 count = 1
-Flag = True
-while Flag:
+while True:
     capture = True
     count_one = 0
     for x in range(scale):
@@ -21,12 +20,12 @@ while Flag:
                 break
         if capture == False: # 1만나면 잠깐 벗어나기
             break
-    if count_one == 0:
+    if count_one == 0:  # 1인거 없으면 이곳을 뜨자
         break
-    count +=1
+    count +=1   # count는 집의 인덱스를 나타냄
     S = list()
     S.append([start_x,start_y])
-    house = 0
+    house = 0   # 집의 개수
     while len(S) != 0:
         start_x,start_y = S.pop()
         zido[start_x][start_y] = count
@@ -37,7 +36,7 @@ while Flag:
             if 0 <= X < scale and 0 <= Y < scale:
                 if zido[X][Y] == 1 and not [X,Y] in S:
                     S.append([X,Y])
-    count_house.append(house)
+    count_house.append(house)   # 각집이 몇개있는지 알려줌
 
 print(count-1)
 count_house.sort()
