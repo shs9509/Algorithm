@@ -13,12 +13,12 @@ def perm(k,n):
         return
     for i in range(len(P)):
         # if used[i]: continue  # 중복을 걸러주는 범인
-        used[i] = True
+        # used[i] = True
         order.append(P[i])
 
         perm(k+1,n)
 
-        used[i]= False
+        # used[i]= False
         order.pop()
 
 perm(0,M)
