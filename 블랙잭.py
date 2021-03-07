@@ -2,12 +2,12 @@
 
 num, sum_val = list(map(int , input().split())) # num장의 카드 , sum_val을 넘지 말아야한다.
 card = list(map(int , input().split())) # 카드 리스트
-visit = [False] * num
-order =  []
-li = list()
+visit = [False] * num	# 순열 중복 체크
+order =  []	 # 순열이 저장되는 곳
+li = list()	 # 카드의 합이 저장되는 곳
 def perm(k,n,a):
-    if k == 3:
-        val = sum(order)
+    if k == 3:	# 3장이니깐
+        val = sum(order)	
         if val <= a :
             li.append(val)  # sum_val을 넘지않는 값들을 li에 저장
         return
