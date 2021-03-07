@@ -1,7 +1,7 @@
 #https://www.acmicpc.net/problem/2798
 
-num, sum_val = list(map(int , input().split()))
-card = list(map(int , input().split()))
+num, sum_val = list(map(int , input().split())) # num장의 카드 , sum_val을 넘지 말아야한다.
+card = list(map(int , input().split())) # 카드 리스트
 visit = [False] * num
 order =  []
 li = list()
@@ -9,7 +9,7 @@ def perm(k,n,a):
     if k == 3:
         val = sum(order)
         if val <= a :
-            li.append(val)
+            li.append(val)  # sum_val을 넘지않는 값들을 li에 저장
         return
     for i in range(n):
         if visit[i]:
@@ -24,4 +24,4 @@ def perm(k,n,a):
             order.pop()
 
 perm(0,num,sum_val)
-print(max(li))
+print(max(li))  # 그안에서 가장 큰값 추출
