@@ -1,32 +1,43 @@
-def cons(li, row, col, char):  # li = 색깔배치, scale = 배치 크기, char = 해당하는 색깔
+from collections import deque
+
+row, col = list(map(int, input().split())) #가로 세로
+section = list()    # 토마토 판
+go = 1 
+for co in range(col):
+    section.append(list(map(int ,input().split())))
+
+for search1 in section: # 다익은경우 판별
+    if 0 in search1:
+        break
+else:
+    go = 0 
+
+if go: # 다 안익었으면 시작
     dr = [1,0,0,-1]
     dc = [0,1,-1,0]
-    count = 0   # 구역 숫자
-    visited = [['o' for j in range(row)] for k in range(col)] # 확인한 색깔 체크용리스트
+    max_day = 0 # 최종날짜를 나타내는값
+    S = deque()
     for x in range(col):
         for y in range(row):
-            if (li[x][y] in char) and (visited[x][y] != 'V'):   # 원하는색깔이며 방문하지 않았다!
-                start_x = x
-                start_y = y # x,y 그대로쓰면 밑에서 위의 for문의 xy가 바뀜
-                count += 1  # 구역 추가 
-                S = list()
-                S.append([start_x,start_y])
-                while len(S) != 0:
-                    start_x, start_y = S.pop(0)
-                    visited[start_x][start_y] = 'V' # 방문 체크해주기
-                    for i in range(4):
-                        X = start_x + dr[i]
-                        Y = start_y + dc[i]
-                        if 0 <= X < col and 0 <= Y < row:
-                            if li[X][Y] in char and visited[X][Y] != 'V':
-                                S.append([X,Y])
-    return count
+            if section[x][y] == 1:   # 토마토가 안익으면 큐에넣는다.
+                S.append([x,y,0]) ## 튜플로하면 더좋다 ##
+    while len(S) != 0:              # BFS
+        start_x, start_y, start_day = S.popleft()
+        if max_day <= start_day:    # 날짜가 더큰경우를 넣는다.
+            max_day = start_day
+        section[start_x][start_y] = 1
+        for i in range(4):
+            X = start_x + dr[i]
+            Y = start_y + dc[i]
+            L = start_day + 1
+            if 0 <= X < col and 0 <= Y < row and section[X][Y] == 0:
+                S.append([X,Y,L])
 
-row1, col1 = list(map(int, input().split()))
-section = list()
-for i in range(col1):
-    section.append(list(map(int ,input().split())))
-if cons(section, row1, col1, [0,1]) != 1:
-    print(-1)
-elif -1 not in section and 0 not in section:
-    print(0)
+    for search in section:  # BFS를 거치고 토마토 판에 0 있으면 -1 출력
+        if 0 in search:
+            print(-1)
+            break
+    else:   # 0일 없으면 걸렸던 날짜를 출력
+        print(max_day)
+else:   # 애초에 다 익었다면 0 출력
+    print()

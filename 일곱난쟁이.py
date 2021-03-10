@@ -13,10 +13,9 @@ def perm(n,m,val):
     #     return  
     if n == 7:
         if sum(order) == val:   #합이 100이라면 그 원소값을 정렬하고 print
-            for i in order:
-                print(i) 
-            # flag = False  
+            li.append(order)
             return 1
+        return 0
     for k in range(m):
         if visit[k]:
             continue
@@ -30,4 +29,5 @@ def perm(n,m,val):
             order.pop()
 
 perm(0,9,100)
+print(li)
 
