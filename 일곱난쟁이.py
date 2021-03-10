@@ -8,23 +8,21 @@ order = []
 li = list()
 # flag = True
 def perm(n,m,val):
-    # global flag
-    # if flag == False: # 합이 100인것을 찾으면 즉시 함수를 나올수있게한다.
-    #     return  
     if n == 7:
         if sum(order) == val:   #합이 100이라면 그 원소값을 정렬하고 print
             li.append(order)
             return 1
-        return 0
+        return
     for k in range(m):
         if visit[k]:
             continue
         else:
             visit[k] = True
             order.append(heigth[k])
-            perm(n+1,m,val)
             if perm(n+1,m,val) == 1:
                 return 1            #flag외의 방법
+            else:
+                perm(n+1,m,val)
             visit[k] = False
             order.pop()
 
