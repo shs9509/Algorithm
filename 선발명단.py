@@ -1,26 +1,23 @@
 tc = int(input())
-spec = list()
-for i in range(11):
-    spec.append(map(int, input().split()))
+for tc_num in range(tc):
+    spec = list()
+    for num in range(11):
+        spec.append(list(map(int,input().split())))
 
-# 자바애들은 DFS로 풀었다는데 흠.. 왜지?
-
-
-visit = [[False for _ in range(11)]for a in range(11)]
-order = []
-
-def perm(n,k):
-    if k==n:
-        return  
-    for i in range(11):
-        for j in range(11):
-            if visit[i][j] == True:
-                continue
-            else:
-                if spec[i][j]>0:
-                    visit[i][j] = True
-                    order.append(spex[i][i])
-                perm(n+1,k)
-
-                visit[i][j] = False
-                order.pop()
+    def perm(k,cursum):
+        global ans
+        if k == 11:
+            if cursum >= ans:
+                ans = cursum
+        return
+        else:
+            for i in range(11):
+                if used[i] or spec[k][i] == 0: continue
+                used[i] = 1
+                perm(k + 1, cursum + spec[k][i])
+                used[i] = 0
+    
+    used = [0] * 11
+    ans = 0
+    perm(0, 0)
+    print(ans)
