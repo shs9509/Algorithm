@@ -1,3 +1,5 @@
+#https://www.acmicpc.net/problem/3980
+
 tc = int(input())
 for tc_num in range(tc):
     spec = list()
@@ -10,7 +12,6 @@ for tc_num in range(tc):
             if cursum >= ans:
                 ans = cursum
         return
-        else:
             for i in range(11):
                 if used[i] or spec[k][i] == 0: continue
                 used[i] = 1
