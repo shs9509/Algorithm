@@ -11,40 +11,38 @@ DFS 문제 아님?
 BFS다.
 '''
 
-def dfs(size,first):
+def bfs(size,first):    # 사람수, 그래프의 시작지점
     visit = [0 for _ in range(size+1)]
     S=list()
     S.append(first)
     visit[first] = 1
     while S:
         start = S.pop(0)
-        for i in direct[start]:
+        for i in direct[start]: 
             if visit[i] == 0:
                 S.append(i)
-                visit[i] = visit[start] + 1 
-    # print(visit)
+                visit[i] = visit[start] + 1 # 방문하면서 start가 가지고있던 친구거리 값을 +1 한다.
     return max(visit)-1
 
-num = int(input())
-direct = [[] for _ in range(num+1)]
-cnt = list()
+num = int(input())  # 사람수
+direct = [[] for _ in range(num+1)] # 연결 그래프
+cnt = list()    # 최대 친구 거리수 저장리스트
 
 while True:
-    a, b = list(map(int, input().split()))
+    a, b = list(map(int, input().split())) 
     if a == -1:
         break
     direct[a].append(b)
-    direct[b].append(a)
+    direct[b].append(a) # 양방향으로 친구를 리스트에 등록한다.
 
-# print(direct)
 
-for i in range(1,num+1):
-    cnt.append(dfs(num,i))
+for i in range(1,num+1):    # 각 사람마다 시작지점으로 그래프를 탐색한다.
+    cnt.append(bfs(num,i))
 
-min_value = min(cnt)
-print(min_value,cnt.count(min_value))
+min_value = min(cnt)    #  친구 최소거리값
+print(min_value,cnt.count(min_value)) # 친구 최소거리값과 그 값을 가진 사람수
 
-for i in range(num):
+for i in range(num):    # 최소값을 가진 사람 출력
     if min_value == cnt[i]:
         print(i+1, end=' ')
 
