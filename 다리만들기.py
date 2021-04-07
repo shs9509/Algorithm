@@ -19,7 +19,7 @@ land = list()
 for i in range(scale):
     land.append(list(map(int,input().split())))
 
-check = [[False] * scale for _ in range(scale)] # 섬 확인시 체크용리스트
+check = [[False] * scale for _ in range(scale)] # 섬 확인시 체크용리스트 
 ans = sys.maxsize # 이러면 최대값이 늘어난다.
 count = 1
 
@@ -45,8 +45,7 @@ for x in range(scale):
     for y in range(scale):
         if check[x][y] == False and land[x][y] == 1:
             dfs(x, y)
-            count += 1
-
+            count += 1 
 
 ### bfs ###
 def bfs(z):
