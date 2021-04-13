@@ -1,13 +1,5 @@
 #https://www.acmicpc.net/problem/2479
 
-'''
-코드들을 다 순회를 돌아서 해밍코드인지 확인
-확인한후 해당 해밍코드에 방문체크를 한다.
-그러면 방문체크리스트가 필요하겟네
-
-1에서 3,5를 갈수있고 3에서 4 > 2로 도착하는데
-5 같은 가망이 없는애를 어떻게 없애지??
-'''
 def dfs(s,e,visited):
     visited = visited+[s]
     for j in range(1,num+1):
@@ -40,10 +32,10 @@ start, end = map(int, input().split())
 
 dfs(start,end,visit)
 
-if len(answer)==0:
+if len(answer)==0: # answer에 아무것도 없다면 답이없다!
     print(-1)
 else:
-    small_len = num+1
+    small_len = num+1 # 최소경로를 찾는 과정 (길이가 가장 짧은것!)
     for an in range(len(answer)): 
         if len(answer[an])<=small_len:
             small_len = an
@@ -52,3 +44,12 @@ else:
     
 
 
+
+'''
+코드들을 다 순회를 돌아서 해밍코드인지 확인
+확인한후 해당 해밍코드에 방문체크를 한다.
+그러면 방문체크리스트가 필요하겟네
+
+1에서 3,5를 갈수있고 3에서 4 > 2로 도착하는데
+5 같은 가망이 없는애를 어떻게 없애지??
+'''
