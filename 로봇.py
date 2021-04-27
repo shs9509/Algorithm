@@ -6,6 +6,11 @@
 
 쭉가는것을 1로 친다 그러면 중간에 멈추는것을 어떻게 판단하고 멈춰야할까...
 '''
+
+
+'''
+북 동서 1 남 2
+'''
 def direct(a,b):
     if a in [0,1] and b in [0,1] and a!=b:
         return 2
@@ -15,8 +20,9 @@ def direct(a,b):
         return 0
     else:
         return 1
-    
-
+# 2차원배열
+# 
+# 방향
 def dfs(x,y,dir,dist):
     S = list()
     S.append((x,y,dir))
@@ -70,6 +76,7 @@ input = sys.stdin.readline
 dx = [0, 0, 1, -1]
 dy = [1, -1, 0, 0]
 
+
 def bfs(x, y, dir):
     q.append([x, y, dir])
     c[x][y][dir] = 1
@@ -89,6 +96,20 @@ def bfs(x, y, dir):
         #     turn_l(x, y, dir) #못움직이면 회전
         #     turn_r(x, y, dir)
         # 왜있음 이거?
+
+'''
+
+(1,1,동)
+->
+    (1,1,북) -> 3칸 확인
+        -> (1,1,서) -> 3칸 확인
+    (1,1,남) -> 3칸 확인
+
+
+
+최대 3거리를 이동할수있는데
+결과가나온다.
+'''
 
 def move(x, y, dir):
     cnt = 1

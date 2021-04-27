@@ -20,7 +20,6 @@ for s_x in range(scale_x):
 
 ans = 0
 end = True
-Q = [(1,1)]
 while end:
     ans +=1
     end = False

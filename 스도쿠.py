@@ -39,7 +39,7 @@ def sdoku(sdoku_pan):
         if 0 in sdoku_pan[num_li]:
             tmp_set = set(sdoku_pan[num_li])
             need_num =list(standard - tmp_set)
-            print(need_num)
+            print(need_num) # [2,9]
             Flag = False
             for position in range(9):
                 if sdoku_pan[num_li][position] == 0:
@@ -47,8 +47,6 @@ def sdoku(sdoku_pan):
                         sdoku_pan[num_li][position] = n
                         print(n)
                         sdoku(sdoku_pan)
-
-                        
 
 
 li = list()
