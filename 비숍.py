@@ -18,6 +18,7 @@ def dfs(idx, c, cnt): #좌표, 짝홀패턴, 개수
     if n*n-idx+1+cnt <= ans[c] or idx >= n*n: # 순회돈 나머지가 ans값보다 작거나, idx가 범위넘어가면
         return 
     ans[c] = max(ans[c], cnt) 
+
     x, y = idx//n, idx%n  # x,y좌표
     j = y 
     for i in range(x, n):
@@ -48,9 +49,9 @@ n = 2
 
 흑 백
 
-흑 백
+백 흑
 
--> [흑, 백, 흑, 백]
+-> [흑, 백, 백, 흑]
 
 '''
 
