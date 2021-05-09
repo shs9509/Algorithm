@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # tc = int(input())
 # num = int(input())
 # li =list()
