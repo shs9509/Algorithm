@@ -4,48 +4,48 @@
 # # 치킨집의 최대 개수 M개를 택해서
 # # 그러면 M개를 택해서 치킨거리 구하기
 
-# def find_chicken_length(lis):# 고른치킨점에서 치킨거리 구하기
-#     ans_length = 0
-#     for h in home:
-#         length=10000000000
-#         home_x, home_y = h
-#         for l in lis:
-#             chicken_x, chicken_y = l
-#             if abs(home_x-chicken_x)+abs(home_y-chicken_y)<=length:
-#                 length = abs(home_x-chicken_x)+abs(home_y-chicken_y)
-#         ans_length += length
-#     return ans_length
+def find_chicken_length(lis):# 고른치킨점에서 치킨거리 구하기
+    ans_length = 0
+    for h in home:
+        length=10000000000
+        home_x, home_y = h
+        for l in lis:
+            chicken_x, chicken_y = l
+            if abs(home_x-chicken_x)+abs(home_y-chicken_y)<=length:
+                length = abs(home_x-chicken_x)+abs(home_y-chicken_y)
+        ans_length += length
+    return ans_length
 
-# def select(start,lis,num): # 치킨 위치중에서 num개의 위치고르기
-#     if len(lis)==num:
-#         length_li.append(find_chicken_length(lis))
-#         return
-#     else:
-#         for i in range(start,len(chicken)):
-#             if len(S)+len(chicken)-i<num:
-#                 break
-#             else:
-#                 S.append(chicken[i])
-#                 select(i,S,num)
-#                 S.pop()
+def select(start,lis,num): # 치킨 위치중에서 num개의 위치고르기
+    if len(lis)==num:
+        length_li.append(find_chicken_length(lis))
+        return
+    else:
+        for i in range(start,len(chicken)):
+            if len(S)+len(chicken)-i<num:
+                break
+            else:
+                S.append(chicken[i])
+                select(i,S,num)
+                S.pop()
 
-# scale, need_num = map(int, input().split())
-# li = list() # 주어진 리스트
-# chicken = list() # 치킨집 좌표리스트
-# home = list() # 집 좌표리스트
-# length_li = list()
-# for i in range(scale):
-#     li.append(list(map(int,input().split())))
+scale, need_num = map(int, input().split())
+li = list() # 주어진 리스트
+chicken = list() # 치킨집 좌표리스트
+home = list() # 집 좌표리스트
+length_li = list()
+for i in range(scale):
+    li.append(list(map(int,input().split())))
 
-# for x in range(scale):
-#     for y in range(scale):
-#         if li[x][y]==2:
-#             chicken.append([x,y])
-#         elif li[x][y]==1:
-#             home.append([x,y])
-# S = list()
-# select(0,S,need_num)
-# print(min(length_li))
+for x in range(scale):
+    for y in range(scale):
+        if li[x][y]==2:
+            chicken.append([x,y])
+        elif li[x][y]==1:
+            home.append([x,y])
+S = list()
+select(0,S,need_num)
+print(min(length_li))
 
 ## 시간 초과 걸리 메모이제이션 써야되겟는데
 
@@ -72,7 +72,7 @@ def select(start,lis,num): # 치킨 위치중에서 num개의 위치고르기
         return
     else:
         for i in range(start,len(chicken)):
-            if len(S)+len(chicken)-i<num:
+            if len(S)+(len(chicken)-i)<num: 
                 break
             else:
                 S.append(i)
