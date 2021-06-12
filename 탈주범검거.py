@@ -24,8 +24,8 @@ for tc in range(1, int(input())+1):
         for dx, dy in tunnel[board[x][y]]:
             nx, ny = x + dx, y + dy
             if not 0 <= nx < N or not 0<= ny < M:continue # 예외처리 1) 모서리
-            if (-dx, -dy) in tunnel[board[nx][ny]]: # 예외처리 2) 연결부
-                if not visit[nx][ny] and board[nx][ny]:
+            if (-dx, -dy) in tunnel[board[nx][ny]]: # 예외처리 2) 연결부 # 와 ㅈㄴ 똑똑하다
+                if not (visit[nx][ny] and board[nx][ny]):
                     visit[nx][ny] = visit[x][y] + 1
                     q += [(nx, ny)]
                     if visit[nx][ny] <= L:cnt += 1
