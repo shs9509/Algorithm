@@ -120,7 +120,7 @@ dc = [1,-1,0,0]
 for tc_num in range(tc):
     scale = int(input())#크기
     li = list()#핀볼배치
-    wormwhole = [0,0,0,0,0,0,0,0,0,0,0]
+    wormwhole = [0,0,0,0,0,(1,2),0,0,0,0,0]
     wormwhole_li = [[0 for _ in range(scale)] for _ in range(scale)]
     blackwhole = list()
     for i in range(scale):
@@ -143,7 +143,7 @@ for tc_num in range(tc):
 
 
     
-#########################
+####################################################################
 # 상 하 좌 우
 dx = [0, 0, -1, 1]
 dy = [-1, 1, 0, 0]
@@ -171,11 +171,12 @@ for test_case in range(1, 1 + T):
     for r in range(1, N - 1):
         for c in range(1, N - 1):
             if MAP[r][c] in range(6, 11):
-                worm_start = worm_stack[MAP[r][c]]
+                # MAP[r][c]=6
+                worm_start = worm_stack[MAP[r][c]] # worm_stack[6] = None > worm_stack[6]=(1,2) > worm_start 
                 if not worm_start:
-                    worm_stack[MAP[r][c]] = (r, c)
+                    worm_stack[MAP[r][c]] = (r, c) # worm_stack[6] =(1,2)
                 else:
-                    wormhole[worm_start] = (r, c)
+                    wormhole[worm_start] = (r, c)  # 딕셔너리로 서로저장
                     wormhole[(r, c)] = worm_start
 
     # 탐색
