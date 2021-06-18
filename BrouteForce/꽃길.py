@@ -24,11 +24,12 @@ def flower(pan,seed,s):
                     seed +=1
                     flower(pan,seed,s)
                     seed -=1
-                    s.pop()
-                    s.pop()
-                    s.pop()
-                    s.pop()
-                    s.pop()
+                    # s= s[:-5]
+                    # s.pop()
+                    # s.pop()
+                    # s.pop()
+                    # s.pop()
+                    # s.pop()
 
 dr=[0,0,0,1,-1]
 dc=[0,1,-1,0,0]
