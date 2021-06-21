@@ -41,6 +41,7 @@ def min_val(W):
             min_answer+='5'
     return
 
+
 word = list(input())
 s= list()
 c= list()
