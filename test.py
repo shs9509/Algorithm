@@ -165,5 +165,13 @@
 # for ans in answer:
 #     print(ans, end=" ") # 정답인 각 후보 한칸 씩 띄워가며 출력
 
-if 2:
-    print('ehlsp?')
+# if 2:
+#     print('ehlsp?')
+
+a= ['qwle k jkqwej']
+b= 'asdasd sads sda'
+
+print(type(b.split(' ')[1] + b.split(' ')[0]) )
+print(a[0].split(' ')[0])
+a = "20010331Rainy"
+year = a[:4]

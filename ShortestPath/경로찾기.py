@@ -2,19 +2,16 @@
 
 def graph(S):
     while S:
-        print(S)
         x,y = S.pop()
         for i in range(n):
-            if li[y][i] == 0:
-                li[y][i] = 1
-                S.append((y,i))
-        
-            if li[x][i] == 0:
-                li[x][i] = 1
-                S.append((x,i))
+            if li[y][i] == 1:
+                if li[x][i] ==1:
+                    continue
+                else:
+                    li[x][i] = 1
+                    S.append((x,i))
 
 
-        
 
 n = int(input())
 li = list()
@@ -28,4 +25,8 @@ for x in range(n):
             s.append((x,y))
 
 graph(s)
-print(li)
+for i in li:
+    for j in i:
+        print(j,end=' ')
+    print('')
+    
