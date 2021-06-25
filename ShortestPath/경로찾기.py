@@ -12,7 +12,6 @@ def graph(S):
                     S.append((x,i))
 
 
-
 n = int(input())
 li = list()
 s = list()
