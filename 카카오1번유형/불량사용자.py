@@ -94,6 +94,8 @@ def solution(user_id, banned_id):
 ################  nonlocal 이용  ####################
 #####################################################
 
+#  solution(["frodo", "fradi", "crodo", "abc123", "frodoc"],["fr*d*", "*rodo", "******", "******"])
+
 def solution(user_id, banned_id):     
     ban_list= [[]for _ in range(len(banned_id))]
     length = len(banned_id)
@@ -109,7 +111,7 @@ def solution(user_id, banned_id):
                     ban_list[j].append(user)
             else:
                 continue
-            
+    print(ban_list)
     S = list()
     L = list()
     new_L = list()
@@ -133,11 +135,15 @@ def solution(user_id, banned_id):
                     S.pop()
     ban_f(0)
     
-    # print(L)
+    print(L)
     for i in range(len(L)):
         if L[i] in new_L:
             continue
         else:
             new_L.append(L[i])
-    # print(new_L)
+    print(new_L)
     return len(new_L)
+
+solution(["frodo", "fradi", "crodo", "abc123", "frodoc"],["fr*d*", "*rodo", "******", "******"])
+# 스트링으로 만들고 셋해버리기
+# 딕셔너리 키로 판별 
