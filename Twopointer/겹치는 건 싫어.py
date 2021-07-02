@@ -18,4 +18,3 @@ for i in range(length):
 save_li.append(count)
 # print(save_li)
 print(max(save_li))
-
