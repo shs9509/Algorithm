@@ -6,7 +6,7 @@ n = int(input())
 li = list()
 for i in range(n):
     li.append(list(map(int, input().split())))
-
+[1,2,3,4]
 s= [j for j in range(n)]
 sub = 999999999
 for i in range(1,n+1):
