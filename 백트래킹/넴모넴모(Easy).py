@@ -25,6 +25,29 @@ def dfs(cnt):
         Map[y][x] = 1
         dfs(cnt + 1)
         Map[y][x] = 0
-
 dfs(0)
 print(answer)
+
+##################################
+
+# a, b = map(int, input().split())
+
+# visit = [[1 for _ in range(b)] for _ in range(a)]
+# count = 0
+
+# dr = [1,1,0]
+# dc = [1,0,1]
+
+# def dfs(c):
+#     global count
+#     if c == a*b:
+#         count +=1
+#         return
+#     for x in range(a):
+#         for y in range(b):
+#             if visit[x-1][y-1] or visit[x-1][y] or visit[x][y-1]:
+#                 visit[x][y] = 1
+#                 dfs(c+1)
+#                 visit[x][y] = 0
+# dfs(0)
+# print(count)
