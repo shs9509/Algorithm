@@ -1,5 +1,7 @@
 #0715 두 용액 : https://www.acmicpc.net/problem/2470
 
+
+
 n = int(input())
 li = list(map(int, input().split()))
 li = sorted(li)
@@ -9,7 +11,7 @@ start = 0
 best_start =0
 best_end =0
 zin=4000000000
-while start<end:
+while start<end: 
     mix = li[start]+li[end] # 이게 문제 였음
     if abs(zin) >= abs(li[start]+li[end]):
         zin = li[start]+li[end]
