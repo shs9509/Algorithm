@@ -13,8 +13,8 @@ for tc_num in range(tc):
     for s in range(scale):
         li.append(list(map(int,input().split())))
     after_li =copy.deepcopy(li)
-    center = scale // 2
-    radius = scale // 2
+    center = scale // 2 # 중앙
+    radius = scale // 2 # 반지름
     angle_time = angle //45
     for r in range(1,radius+1):
         for a in range(8):
