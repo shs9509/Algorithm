@@ -14,7 +14,6 @@ for r in range(9):
 
 dr=[-1,0,-1,0,-1,0,1,1,1]
 dc=[0,1,1,-1,-1,0,0,1,-1]
-visit = [[True for j in range(8) ] for j in range(9) ]
 
 S = [(8,0)]
 
@@ -22,6 +21,7 @@ def dfs():
     flag= False
     while S:
         # print(wall)
+        visit = [[True for j in range(8) ] for j in range(9) ]
         a = len(S)
         for v in range(a):
             x, y =S.pop(0)
