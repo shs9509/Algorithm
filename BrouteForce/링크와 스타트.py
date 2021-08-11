@@ -6,21 +6,20 @@
 7 1 0 2
 3 4 5 0
 '''
-import copy
 from itertools import combinations, count
 n = int(input())
-idx = [ k for k in range(1,n+1)]
+idx = [ k for k in range(1,n+1)] # [1,2,3,4]
 li= list()
-sum_val = 0
+#sum_val = 0
 min_val = 999999999999
 flag = False
 for i in range(n):
     li.append(list(map(int,input().split())))
 
-for l in li:
-    sum_val+=sum(l)
+# for l in li:
+#     sum_val+=sum(l) ##
 
-for j in range(1,n//2+1):
+for j in range(1,n//2+1): # 총5 2/3 1/4 3/2 4/1
     comb_li = combinations(idx,j) #[(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]
     for comb in comb_li:    # (1, 2)
         count_a = 0
@@ -29,7 +28,7 @@ for j in range(1,n//2+1):
             for y in comb: # 1,2
                 count_a += li[x-1][y-1] # 1,1 1,2 2,1 2,2
         remain = list(set(idx) -set(comb))
-        for a in remain:
+        for a in remain: # 3,4
             for b in remain:
                 count_b+= li[a-1][b-1]
         # print(comb,remain)
@@ -44,3 +43,6 @@ for j in range(1,n//2+1):
                 
 print(min_val)
 
+#zip - 나중에(?) 
+# [1,2,4 ] [apple ,banana]
+# {[1, apple],[2,banana] }
