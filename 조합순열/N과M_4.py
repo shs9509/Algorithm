@@ -46,20 +46,20 @@ for j in S:
 ##################################
 ########### banila ###############
 
-# n, m  = map(int, input().split())
-# s = list()
-# for i in range(1,n+1):
-#     s.append(i)
-# #[1,2,3]
+n, m  = map(int, input().split())
+s = list()
+for i in range(1,n+1):
+    s.append(i)
+#[1,2,3]
 
-# def increase_pro(start,pos,S):
-#     if pos == m:
-#         print(S)
-#         return
-#     else:
-#         for j in range(start,len(s)):
-#             S.append(s[j])
-#             increase_pro(j,pos+1,S)
-#             S.pop()
+def increase_pro(start,pos,S):
+    if pos == m:
+        print(S)
+        return
+    else:
+        for j in range(start,len(s)):
+            S.append(s[j])
+            increase_pro(j,pos+1,S)
+            S.pop()
 
-# increase_pro(0,0,[])
+increase_pro(0,0,[])
