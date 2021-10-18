@@ -1,17 +1,17 @@
 #https://www.acmicpc.net/problem/1106
-from sys import stdin, maxsize
 
 
-if __name__ == '__main__':
-    # 확보해야할 고객, 도시의 수
-    C, N = map(int, stdin.readline().split())
-    # 광고 정보
-    ad = [list(map(int, stdin.readline().split())) for _ in range(N)]
-    # 적어도 C명을 늘려야 하기에, 고객의 수 최대 값을 더해 줄 필요가 있음
-    dp = [0] + [maxsize] * (C + 100)
 
-    for cost, customer in ad:
-        for cur_customer in range(customer, C + 101):
-            dp[cur_customer] = min(dp[cur_customer], dp[cur_customer - customer] + cost)
+number, cities_num = map(int,input().split())  # (<12, 2)
 
-    print(min(dp[C:C + 101]))
+cities= list()
+for i in range(cities_num):
+    cities.append(list(map(int, input().split())))
+
+min_li = [0]+[100000000]*(number+101)
+
+for city in cities:
+    cost, guest = city # (2,5) (1,1)
+    for new_guest in range(guest,number+101):
+        min_li[new_guest] = min(min_li[new_guest], min_li[new_guest - guest] + cost)
+print(min(min_li[number:number + 101]))
