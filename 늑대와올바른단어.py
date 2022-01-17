@@ -1,6 +1,5 @@
 #https://www.acmicpc.net/problem/13022
 li = list(input())
-# print(li)
 if li[0] !='w':
     print(0)
 elif li[-1]!='f':
