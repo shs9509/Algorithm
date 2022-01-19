@@ -54,9 +54,32 @@
 #         print(k,end=' ')
 #     print('')
 
-from itertools import permutations
+# from itertools import permutations
 
-N, M = map(int, input().split())
-li = map(str, range(1, N+1))
-print(li)
-print('\n'.join(list(map(' '.join,permutations(li, M)))))
+# N, M = map(int, input().split())
+# li = map(str, range(1, N+1))
+# print(li)
+# print('\n'.join(list(map(' '.join,permutations(li, M)))))
+
+
+a,b= list(map(int,input().split()))
+# print(a,b)
+li = [j for j in range(1,a+1)]
+# print(li)
+check = [False]*a
+result = []
+def perm(n):
+    if n==b:
+        print(' '.join(map(str,result)))
+    else:
+        for i in range(a):
+            if check[i]:
+                continue
+            else:
+                check[i]=True
+                result.append(li[i])
+                perm(n+1)
+                check[i]=False
+                result.pop()
+
+perm(0)
