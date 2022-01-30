@@ -4,40 +4,6 @@
 #수열 S에서 최대 K번 원소를 삭제한 수열에서 짝수로 이루어져 있는 연속한 부분 수열 중 가장 긴 길이를 출력한다.
 # 빼고 더하면서 진행하면 될듯
 
-# N, M = map(int,input().split())
-# li = list(map(int,input().split())) #1 2 3 4 5 6 7 8
-# s= 0
-# delete_count =0
-# max_length = 0
-# length =0
-# for i in range(N):
-#     if li[i]%2==1:
-#         delete_count+=1
-#         if delete_count==M:
-#             count =0
-#             while(True):
-#                 if count >=1 and li[s]%2==0:
-#                     break
-#                 if li[s]%2==1:
-#                     count+=1
-#                 else:
-#                     length-=1
-#                 s+=1
-#             delete_count-=count
-#             if delete_count <0:
-#                 delete_count=0
-#         # print(s,'sss')
-    
-#         if max_length < length:
-#                 max_length = length
-#     else:
-#         length+=1
-#         if max_length < length:
-#                 max_length = length
-#     # print(length)
-
-# print(max_length)
-
 N, K = map(int, input().split())
 li = list(map(int, input().split()))
 
@@ -62,7 +28,7 @@ for start in range(N):
             max_lenght = length
             break
         
-    if count == K+1 :
+    if count <= K+1 :
         max_lenght = max(length, max_lenght)
         
     if li[start] %2 == 1: # 시작점이 홀수
@@ -71,3 +37,11 @@ for start in range(N):
         length -= 1
         
 print(max_lenght)
+ 
+# 이상한데???
+# 11 3
+# 1 3 2 4 5 7 9 11 6 8 10
+# 이거 답이 2 나옴
+
+# 데이터가 부족한 경우 같음
+# 마지막이 최장수열인경우에는 고려되지 못함 ->  if count <= K+1 으로 수정
