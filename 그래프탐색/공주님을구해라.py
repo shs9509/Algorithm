@@ -133,3 +133,65 @@ def bfs():
  
 res = bfs()
 print("Fail" if(res > t) else res)
+
+#############################################################################
+
+N, M, T = map(int,input().split())
+li= list()
+for i in range(N):
+    li.append(list(map(int,input().split())))
+
+for i in range(N):
+    for j in range(M):
+        if li[i][j]==2:
+            sword_x=i
+            sword_y=j
+
+dx =[1,-1,0,0]
+dy =[0,0,-1,1]
+# print(li)
+now =0
+tmp = [(0,0)]
+visited = [[False for _ in range(M)] for _ in range(N)]
+visited[0][0]=True
+check=True
+while(tmp):
+    x,y = tmp.pop(0)
+    for i in range(4):
+        X = x+dx[i]
+        Y = y+dy[i]
+        if 0<=X<N and 0<=Y<M and visited[X][Y]==False:
+            if X==N-1 and Y==M-1:
+                li[X][Y] = li[x][y]+1
+                visited[X][Y]=True
+                tmp =[]
+                break
+            if li[X][Y]==1:
+                continue
+            elif li[X][Y]==0:
+                tmp.append((X,Y))
+                li[X][Y] = li[x][y]+1
+                visited[X][Y]=True
+            elif li[X][Y]==2:
+                li[X][Y] = li[x][y]+(M-1-Y)+(N-1-X)+1
+                visited[X][Y]=True
+# print(visited)
+# print(now)
+# print(li)
+if visited[sword_x][sword_y]==True:
+    if visited[N-1][M-1]==True:
+        if min(li[sword_x][sword_y],li[N-1][M-1])>T:
+            print("Fail")
+        else:
+            print(min(li[sword_x][sword_y],li[N-1][M-1]))
+    elif li[sword_x][sword_y] > T:
+        print("Fail")
+    else:
+        print(li[sword_x][sword_y])
+elif visited[N-1][M-1]==True:
+    if li[N-1][M-1] > T:
+        print("Fail")
+    else:
+        print(li[N-1][M-1])
+else:
+    print('Fail') 
