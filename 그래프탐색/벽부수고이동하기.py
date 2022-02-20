@@ -9,46 +9,46 @@
 
 # #맞는 풀이
 
-# import sys
-# from collections import deque
-# input = sys.stdin.readline
-# dx = [1, -1, 0, 0]
-# dy = [0, 0, -1, 1]
-# def bfs():
-#     q = deque()
-#     q.append([0, 0, 1])
-#     visit = [[[0] * 2 for i in range(m)] for i in range(n)]
-#     visit[0][0][1] = 1
-#     while q:
-#         a, b, w = q.popleft()
-#         if a == n - 1 and b == m - 1:
-#             return visit[a][b][w]
-#         for i in range(4):
-#             x = a + dx[i]
-#             y = b + dy[i]
-#             if 0 <= x < n and 0 <= y < m:
-#                 if s[x][y] == 1 and w == 1:
-#                     visit[x][y][0] = visit[a][b][1] + 1
-#                     q.append([x, y, 0])
-#                 elif s[x][y] == 0 and visit[x][y][w] == 0:
-#                     visit[x][y][w] = visit[a][b][w] + 1
-#                     q.append([x, y, w])
-#         # print(visit)
-#     return -1
-# n, m = map(int, input().split())
-# s = []
-# for i in range(n):
-#     s.append(list(map(int, list(input().strip()))))
-# print(bfs())
+import sys
+from collections import deque
+input = sys.stdin.readline
+dx = [1, -1, 0, 0]
+dy = [0, 0, -1, 1]
+def bfs():
+    q = deque()
+    q.append([0, 0, 1])
+    visit = [[[0] * 2 for i in range(m)] for i in range(n)]
+    visit[0][0][1] = 1
+    while q:
+        a, b, w = q.popleft()
+        if a == n - 1 and b == m - 1:
+            return visit[a][b][w]
+        for i in range(4):
+            x = a + dx[i]
+            y = b + dy[i]
+            if 0 <= x < n and 0 <= y < m:
+                if s[x][y] == 1 and w == 1:
+                    visit[x][y][0] = visit[a][b][1] + 1
+                    q.append([x, y, 0])
+                elif s[x][y] == 0 and visit[x][y][w] == 0:
+                    visit[x][y][w] = visit[a][b][w] + 1
+                    q.append([x, y, w])
+        # print(visit)
+    return -1
+n, m = map(int, input().split())
+s = []
+for i in range(n):
+    s.append(list(map(int, list(input().strip()))))
+print(bfs())
 
-# # # 틀린 풀이
-# # dr=[-1,1,0,0]
-# # dc=[0,0,1,-1]
+# # 틀린 풀이
+# dr=[-1,1,0,0]
+# dc=[0,0,1,-1]
 
-# # row, col = list(map(int, input().split()))
-# # road = list()
-# # for r in range(row):
-# #     road.append(list(map(int,input())))
+# row, col = list(map(int, input().split()))
+# road = list()
+# for r in range(row):
+#     road.append(list(map(int,input())))
 
 # # # print(row, col, road)
 
@@ -107,43 +107,43 @@
 
 # https://www.acmicpc.net/problem/2206
 
-N,M = map(int,input().split())
+# N,M = map(int,input().split())
 
-li = list()
-for i in range(N):
-    li.append(list(map(int,input())))
+# li = list()
+# for i in range(N):
+#     li.append(list(map(int,input())))
 
-print(li)
-visited = [[[[False,99999],[False,99999]] for _  in range(M)] for _ in range(N)]
-visited[0][0] = [[True,0],[False,0]]
-dx=[1,-1,0,0]
-dy=[0,0,-1,1]
+# # print(li)
+# visited = [[[99999,99999] for _  in range(M)] for _ in range(N)]
+# visited[0][0] = [0,0]
+# dx=[1,-1,0,0]
+# dy=[0,0,-1,1]
 
-def dfs():
-    tmp = [(0,0,False)]
-    while(tmp):
-        x,y,wall =tmp.pop(0)
-        for i in range(4):
-            X = x+dx[i]
-            Y = y+dy[i]
-            if 0<=X<N and 0<=Y<M:
-                if li[X][Y]==0:
-                    if wall:
-                        if visited[X][Y][1][0]==False:
-                            visited[X][Y][1][1] = visited[x][y][1][1]+1
-                            tmp.append((X,Y,wall))
-                            visited[X][Y][1][0]=True
-                    else:
-                        if visited[X][Y][0][0]==False:
-                            visited[X][Y][0][1] = visited[x][y][0][1]+1
-                            tmp.append((X,Y,wall))
-                            visited[X][Y][0][0]=True
-                elif li[X][Y]==1:
-                    if wall == False:
-                        visited[X][Y][1][1] = min(visited[X][Y][1][1],visited[x][y][1][1]+1)
-                        tmp.append((X,Y,True))
-                    else:
-                        continue
-dfs()
+# def dfs():
+#     tmp = [[0,0,False]]
+#     while(tmp):
+#         x,y,wall =tmp.pop(0)
+#         for i in range(4):
+#             X = x+dx[i]
+#             Y = y+dy[i]
+#             if 0<=X<N and 0<=Y<M:
+#                 if wall:
+#                     if li[X][Y]==0 and visited[X][Y][1] ==99999:
+#                         visited[X][Y][1] = visited[x][y][1]+1
+#                         tmp.append((X,Y,wall))
+#                     else:
+#                         continue
+#                 else:
+#                     if li[X][Y]==0 and visited[X][Y][0] ==99999:
+#                         visited[X][Y][0] = visited[x][y][0]+1
+#                         tmp.append((X,Y,wall))
+#                     elif li[X][Y]==1:
+#                         visited[X][Y][1] = min(visited[X][Y][1],visited[x][y][0]+1)
+#                         tmp.append((X,Y,True))
 
-print(visited)
+# dfs()
+
+# if min(visited[N-1][M-1][0],visited[N-1][M-1][1])==99999:
+#     print(-1)
+# else:
+#     print(min(visited[N-1][M-1][0],visited[N-1][M-1][1])+1)
