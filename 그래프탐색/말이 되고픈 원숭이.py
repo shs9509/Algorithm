@@ -41,10 +41,3 @@ if result == []:
     print(-1)
 else:
     print(min(result))
-
-
-
-걸 점 걸 걸 걸 도착 (점 1)
-
-걸 걸 걸 점 걸 도착 (점 0)
-

@@ -16,10 +16,7 @@ while(s<=e):
             break
     else:
         if e>=num:
-            if sum_val<obj: #e가끝까지 도착하고나서 이미 목표치를 도달못하면
-                break
-            else:
-                continue
+            break
         else:
             sum_val+=li[e]
             e+=1
