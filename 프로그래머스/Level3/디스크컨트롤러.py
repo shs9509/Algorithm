@@ -38,3 +38,28 @@ def solution(jobs):
             now += 1
                 
     return answer // len(jobs)
+
+
+# 힙큐 안 쓴 버전
+def solution(jobs):
+    disc_length = len(jobs)
+    answer=0
+    jobs.sort(key=lambda x:(x[0],x[1]))
+    start, end= [0,jobs[0][0]+jobs[0][1]]
+    count = jobs[0][1]
+    jobs.pop(0)
+    tmp_jobs=[]
+    while(jobs or tmp_jobs):
+        for idx in range(len(jobs)):
+            if start <= jobs[idx][0] <= end:
+                tmp_jobs.append(jobs.pop(idx))
+                break
+        else:
+            tmp_jobs.sort(key=lambda x:(x[1],x[0]))
+            if tmp_jobs:
+                wait_start, length =  tmp_jobs.pop(0)
+                end+=length
+                count+= (end-wait_start)
+            else:
+                end+=1
+    return count//disc_length
