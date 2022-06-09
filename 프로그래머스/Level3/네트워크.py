@@ -1,29 +1,28 @@
-# def solution(n, computers):
-#     answer = 0
-#     conected_check = [False for _ in range(n)]
-#     network_count = 0 
-#     def dfs(start):
-#         nonlocal conected_check
-#         conected_check[start] = True
-#         tmp = [start]
-#         while(tmp):
-#             start = tmp.pop()
-#             for i in range(n):
-#                 if conected_check[i] == False:
-#                     if computers[start][i]==1:
-#                         conected_check[i] = True
-#                         tmp.append(i)
-#                     else:
-#                         continue
-#                 else:
-#                      continue   
+def solution(n, computers):
+    answer = 0
+    conected_check = [False for _ in range(n)]
+    network_count = 0 
+    def dfs(start):
+        nonlocal conected_check
+        conected_check[start] = True
+        tmp = [start]
+        while(tmp):
+            start = tmp.pop()
+            for i in range(n):
+                if conected_check[i] == False:
+                    if computers[start][i]==1:
+                        conected_check[i] = True
+                        tmp.append(i)
+                    else:
+                        continue
+                else:
+                     continue   
             
-    
-#     for i in range(n):
-#         if conected_check[i] == False:
-#             dfs(i)
-#             answer+=1
-#     return answer
+    for i in range(n):
+        if conected_check[i] == False:
+            dfs(i)
+            answer+=1
+    return answer
 
 
 def solution(n, computers):
